@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hari 3-4 tugas 10</title>
+</head>
+<body>
+    <h1>CRUD</h1>
+    <p>
+        <a href="{% url 'tambah_produk' %}">Tambah Produk</a>/
+    </p>
+    <hr>
+    {% for produk in produk %}
+        <h3>Nama: {{ produk.nama_produk }}</h3>
+        <h3>Keterangan: {{ produk.keterangan }}</h3>
+        <h3>Harga: {{ produk.harga }}</h3>          
+        <h3>Jumlah: {{ produk.jumlah }}</h3>
+        <small>
+            <a href="{% url 'update_produk' produk.id %}">Update Produk</a>/<a href="{% url 'delete_produk' produk.id %}">Delete Produk</a>
+        </small>
+        <hr>
+    {% endfor %}
+    <hr>
+</body>
+</html>
